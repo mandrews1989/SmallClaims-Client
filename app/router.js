@@ -6,6 +6,12 @@ const Router = Ember.Router.extend({
 });
 
 Router.map(function() {
+  this.route('claimant', function() {
+     this.route('defendant', { path: ':claimant_id' }, function() {
+       this.route('claim');
+     });
+  });
 });
 
 export default Router;
+

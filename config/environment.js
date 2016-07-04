@@ -16,10 +16,12 @@ module.exports = function(environment) {
     APP: {
       // Here you can pass flags/options to your application instance
       // when it is created
+      API_NAMESPACE: 'api'
     }
   };
 
   if (environment === 'development') {
+    ENV.APP.API_HOST = 'http://localhost:8000';
     // ENV.APP.LOG_RESOLVER = true;
     // ENV.APP.LOG_ACTIVE_GENERATION = true;
     // ENV.APP.LOG_TRANSITIONS = true;
