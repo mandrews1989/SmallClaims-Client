@@ -1,0 +1,12 @@
+<h2 id="title">Their Information</h2>
+
+<form>
+    <div class="form-group">
+      <label for="first_name">First Name</label>
+      {{input id="first_name" class="form-control" value=model.first_name}}
+    </div>
+     
+    <button class="btn btn-primary" {{action 'next' model}}>Next</button>
+</form>
+
+{{progress-bar step='Their Info'}}

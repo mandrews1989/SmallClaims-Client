@@ -1,0 +1,12 @@
+<div class="card-title">
+  <div class="card-title-body">
+    <span>{{defendant.name}} {{department.name}} </span>
+  </div>
+</div>
+
+  {{single-select
+    options=problems
+    nextAction='next'
+    selected=selected
+    select=(action (mut submission.current.problem))}}
+

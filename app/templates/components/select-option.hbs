@@ -1,0 +1,15 @@
+<li class="option {{if isSelected 'is-selected'}}" {{action 'click' option}}>
+  {{#if showCheckbox}}
+    <span class="check-box {{if isSelected 'is-selected'}}"></span>
+  {{/if}}
+
+  <div class="option-body">
+    <h2 class="name">
+      {{#if option.name}}
+        {{option.name}}
+      {{else}}
+        {{option}}
+      {{/if}}
+    </h2>
+  </div>
+</li>

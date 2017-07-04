@@ -1,0 +1,30 @@
+{{#if hasBlock}}
+  {{yield}}
+{{else}}
+  <label for="{{name}}">{{label}}</label>
+  {{#if description}}
+    <p class="description">{{description}}</p>
+  {{/if}}
+  {{#if isStatic}}
+    <p name="{{name}}" class="static">{{value}}</p>
+  {{else if isTextArea}}
+    {{textarea name=name value=value disabled=disabled}}
+  {{else if isSelect}}
+    {{#x-select value=value multiple=multiple disabled=disabled}}
+      {{#if placeholder}}
+        <option>{{placeholder}}</option>
+      {{/if}}
+      {{#each content as |option|}}
+        {{#x-option value=option.value}}{{option.label}}{{/x-option}}
+      {{/each}}
+    {{/x-select}}
+  {{else}}
+    {{input type=type pattern=pattern name=name value=value disabled=disabled}}
+  {{/if}}
+{{/if}}
+{{#if explain}}
+  <p class="explain">{{explain}}</p>
+{{/if}}
+{{#if errors}}
+  {{field-errors errors=errors}}
+{{/if}}

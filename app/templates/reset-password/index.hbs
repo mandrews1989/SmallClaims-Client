@@ -1,0 +1,10 @@
+<div class="container">
+  <h2 class="centered-header">Reset Password</h2>
+  <form class="standard-form" {{action 'reset_password' on='submit'}}>
+    <div>
+      <label for="email">Email</label>
+      {{input id='email' type='email' value=email}}
+    </div>
+    <button type="submit">Reset password</button>
+  </form>
+</div>

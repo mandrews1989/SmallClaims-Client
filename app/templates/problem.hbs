@@ -1,0 +1,19 @@
+<h2 id="title">What Happened?</h2>
+
+{{#each model.departments as |department|}}
+<div class="card-title">
+  <div class="card-title-body">
+    <span>{{submission.defendant.first_name}} {{department.name}} </span>
+  </div>
+</div>
+
+  {{single-select
+    options=department.problems
+    nextAction='next'
+    classNames='provider'
+    selected=submission.current.problem
+    department=department
+    select=(action (mut submission.current.problem))}}
+{{/each}}
+
+{{progress-bar step='What Happened'}}

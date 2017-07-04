@@ -1,10 +1,16 @@
-import attr from 'ember-data/attr';
 import DS from 'ember-data';
 import join from '../utils/join';
 
+const {
+  Model,
+  hasMany,
+  attr,
+} = DS;
 
-export default DS.Model.extend({
-	first_name: attr('string'),
+export default Model.extend({
+  submissions: hasMany('submission', { async: true }),
+
+  first_name: attr('string'),
     //middle_initial: attr(),
     //last_name: attr(),
     //address: attr(),
@@ -13,9 +19,7 @@ export default DS.Model.extend({
     //zip_code: attr(),
     //other_information: attr(),
     //phone: attr(),
-    //email: attr(),
+  email: attr('string'),
 
-    submission: DS.belongsTo('submission', {async: false}),
-
-    full_name: join(' ', 'first_name', 'last_name'),
+  full_name: join(' ', 'first_name', 'last_name'),
 });

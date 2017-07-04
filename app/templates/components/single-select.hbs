@@ -1,0 +1,17 @@
+<ul>
+  {{#each options as |option|}}
+    {{select-option option=option action='select' showCheckbox=showCheckbox selected=selected}}
+  {{/each}}
+
+  {{#if hiddenOptions}}
+    {{#disclosable-section open=shouldShowHidden title=hiddenTitle nested=nested}}
+      {{#each hiddenOptions as |option|}}
+        {{select-option option=option action='select' showCheckbox=showCheckbox selected=selected}}
+      {{/each}}
+    {{/disclosable-section}}
+  {{/if}}
+
+  {{#if hasOther}}
+    {{select-option option="Other" action='selectOther' showCheckbox=showCheckbox selected=selected}}
+  {{/if}}
+</ul>

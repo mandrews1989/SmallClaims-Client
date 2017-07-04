@@ -1,0 +1,14 @@
+<div class="flash-message-container flash-{{type}}">
+  <div class="flash-body">
+    <span>
+      {{#if hasBlock}}
+        {{{yield}}}
+      {{else}}
+        {{{content}}}
+      {{/if}}
+    </span>
+    {{#unless message.timed}}
+      {{fa-icon "times"}}
+    {{/unless}}
+  </div>
+</div>

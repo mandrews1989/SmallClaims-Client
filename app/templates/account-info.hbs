@@ -1,0 +1,28 @@
+ <h2 class="account-header">Final Details</h2>
+
+    {{form-field name='place_of_occurance'
+      label='Where did this happen?'
+      type='text'
+      value=currentSubmission.place_of_occurance
+      }}
+
+{{#unless session.isAuthenticated}}
+ <h3 class="account-header">Create an Account So You Can Track Your Submission</h3>
+
+<label for="email">Email</label>
+      {{input type='email' value=emailInput}}
+
+<label for="password">Password</label>
+      {{input type='password' value=passwordInput}}      
+
+    {{#unless nonUniqueEmailError}}
+      <p class="non-unique-email-error">Already have an account? Click {{#link-to 'login'}}here{{/link-to}} to log in.</p>
+    {{/unless}}
+
+     <button class="btn btn-primary" {{action 'submit' }}>Submit</button>
+
+{{/unless}}
+
+     <button class="btn btn-primary" {{action 'submit2' }}>Submit</button>
+
+{{progress-bar step='Submit'}}

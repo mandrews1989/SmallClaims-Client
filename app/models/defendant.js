@@ -1,18 +1,18 @@
-import Model from 'ember-data/model';
 import attr from 'ember-data/attr';
-import { belongsTo } from 'ember-data/relationships';
+import DS from 'ember-data';
 
-export default Model.extend({
-    first_name: attr(),
-    middle_initial: attr(),
-    last_name: attr(),
-    address: attr(),
-    city: attr(),
-    state: attr(),
-    zip_code: attr(),
-    other_information: attr(),
-    phone: attr(),
-    email: attr(),
+export default DS.Model.extend({
+    first_name: attr('string'),
+    //middle_initial: attr(),
+    //last_name: attr(),
+    //address: attr(),
+    //city: attr(),
+    //state: attr(),
+    //zip_code: attr(),
+    //other_information: attr(),
+    //phone: attr(),
+    //email: attr(),
 
-    claimant: belongsTo('claimant', { async: false }),
+    submission: DS.belongsTo('submission', {async: false}),
+
 });

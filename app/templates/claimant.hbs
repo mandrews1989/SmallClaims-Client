@@ -1,14 +1,62 @@
-<h2 id="title">Welcome to the Claimant Page!</h2>
+<div class="fulfillment-details">
+  <div class="input-wrapper">
 
- {{#if responseMessage}}
-      <div class="alert alert-success">{{responseMessage}}</div>
-    {{/if}}
+<h2 id="title">Your Information</h2>
 
-<form>
-    <div class="form-group">
-      <label for="first_name">First Name</label>
-      {{input id="first_name" class="form-control" value=model.first_name}}
-    </div>
-     
-    <button class="btn btn-primary" {{action 'next' model}}>Next</button>
-</form>
+<div class="onerow">
+{{form-field name='first_name'
+      label='First name'
+      type='text'
+      value=model.first_name
+      errors=model.errors.first_name}}
+
+{{form-field name='middle_name'
+      label='Middle name'
+      type='text'
+      value=model.middle_name
+      errors=model.errors.middle_name}}
+
+{{form-field name='last_name'
+      label='Last name'
+      type='text'
+      value=model.last_name
+      errors=model.errors.last_name}}
+
+</div>
+
+{{form-field name='address'
+      label='Address'
+      type='text'
+      value=model.address
+      errors=model.errors.address}}
+
+{{form-field name='city'
+      label='City'
+      type='text'
+      value=model.city
+      errors=model.errors.city}}
+
+{{form-field name='state'
+      label='State'
+      type='text'
+      value=model.state
+      errors=model.errors.state}}
+
+{{form-field name='zip_code'
+      label='Zip code'
+      type='text'
+      value=model.zip_code
+      errors=model.errors.zip_code}}
+
+{{form-field name='phone'
+      label='Phone'
+      type='text'
+      value=model.phone
+      errors=model.errors.phone}}
+      
+<button class='advance-button next' {{action 'next' model}}>Next</button>
+
+{{progress-bar step='Your Info'}}
+
+ </div>
+</div>

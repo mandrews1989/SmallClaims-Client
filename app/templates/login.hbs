@@ -1,0 +1,24 @@
+    <form {{action 'authenticate' on='submit'}}>
+      <div>
+        <label for="identification">Email</label>
+        {{input id='identification'  required="required" value=identification}}
+        {{#if _errors.email }}
+          <span class="field-error"> {{ _errors.email }} </span>
+        {{/if}}
+      </div>
+      <div>
+        <label for="password">Password</label>
+        {{input id='password'  type='password' required="required" value=password}}
+        {{#if _errors.password }}
+          <span class="field-error"> {{ _errors.password }} </span>
+        {{/if}}
+      </div>
+      {{#if _errors.general }}
+        <span class="field-error"> {{ _errors.general }} </span>
+      {{/if}}
+      <div>
+        <button type="submit">Login</button>
+      </div>
+    </form>
+
+    {{#link-to 'reset_password'}}Forgot Your Password?{{/link-to}}

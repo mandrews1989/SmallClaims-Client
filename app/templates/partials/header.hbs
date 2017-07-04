@@ -1,0 +1,18 @@
+<header>
+  <nav>
+  <div class="left-nav" {{action 'home'}}>SmallClaims-Client</div>
+    <div class="right-nav" {{action 'toggleNav'}}>
+      {{#if session.isAuthenticated}}
+        Hello, {{currentUser.user.email}}
+        <span class="dropdown-triangle"></span>
+        <ul id="nav-dropdown">
+          {{#link-to 'dashboard' bubbles=false}}<li>Dashboard</li>{{/link-to}}
+          {{#link-to 'settings' bubbles=false}}<li>Settings</li>{{/link-to}}
+          <li {{action 'logout'}}>Log out</li>
+        </ul>
+      {{else}}
+        <span class='login' {{action 'login'}}>Login</span>
+      {{/if}}
+    </div>
+  </nav>
+</header>

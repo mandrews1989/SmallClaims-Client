@@ -1,0 +1,24 @@
+<div class="dashboard container">
+  {{#if newSubmission}}
+    {{#flash-message duration=0 type="success"}}
+      <h2>Congratulations!</h2>
+      
+    {{/flash-message}}
+  {{/if}}
+  <div class="dashboard-header">
+      {{#if noSubmissions}}
+        <p class="no-claims">
+          You haven't yet submitted any claims.
+          To get started, click on the button below.
+        </p>
+      {{/if}}
+      <button class="new-claim" {{action 'newSubmission'}}>New Submission</button>
+  </div>
+  <div class="claim-container">
+    {{#each submissions as |submission|}}
+      {{claim-card submission=submission}}
+    {{/each}}
+  </div>
+
+
+</div>

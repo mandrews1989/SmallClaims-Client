@@ -1,4 +1,8 @@
-<h2 id="title">Welcome to the Home Page!</h2>
-
-{{outlet}}
-
+<div class="wrapper">
+{{partial "partials/header"}}
+<div id="flash-message"></div>
+{{liquid-outlet}}
+<div class="push"></div>
+<div id="modal-target"></div>
+</div>
+{{partial "partials/footer"}}
